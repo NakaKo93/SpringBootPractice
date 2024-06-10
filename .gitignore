@@ -1,3 +1,7 @@
+# mySQL file
+db/data
+db/sql
+
 # Compiled class file
 *.class
 

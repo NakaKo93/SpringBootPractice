@@ -18,7 +18,7 @@ public class ContactForm implements Serializable {
     private String firstName;
 
     @NotBlank
-      @Email
+    @Email
     private String email;
 
     @NotBlank

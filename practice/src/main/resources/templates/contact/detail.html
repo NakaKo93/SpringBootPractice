@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>お問い合わせ詳細</title>
+</head>
+<body>
+	<h1>お問い合わせ詳細</h1>
+	<table border="1">
+	<tr>
+	  <td>姓</td>
+	  <td>
+	    <span th:text="${contactDetail.lastName}"></span>
+	  </td>
+	</tr>
+	<tr>
+	  <td>名</td>
+	  <td>
+	    <span th:text="${contactDetail.firstName}"></span>
+	  </td>
+	</tr>
+	<tr>
+	  <td>メールアドレス</td>
+	  <td>
+	    <span th:text="${contactDetail.email}"></span>
+	  </td>
+	</tr>
+	<tr>
+	  <td>電話番号</td>
+	  <td>
+	    <span th:text="${contactDetail.phone}"></span>
+	  </td>
+	</tr>
+	<tr>
+	  <td>郵便番号</td>
+	  <td>
+		<span th:text="${contactDetail.zipCode}"></span>
+	  </td>
+	</tr>
+	<tr>
+	  <td>住所</td>
+	  <td>
+		<span th:text="${contactDetail.address}"></span>
+	  </td>
+	</tr>
+	<tr>
+	  <td>建物名</td>
+	  <td>
+		<span th:text="${contactDetail.buildingName}"></span>
+	  </td>
+	</tr>
+	<tr>
+	  <td>お問い合わせ種別</td>
+	  <td>
+		<span th:if="${contactDetail.contactType == 'services'}">サービスに関するお問い合わせ</span>
+		<span th:if="${contactDetail.contactType == 'technicalQuestions'}">技術的なお問い合わせ</span>
+		<span th:if="${contactDetail.contactType == 'others'}">その他</span>
+	  </td>
+	</tr>
+	<tr>
+	  <td>お問い合わせ内容</td>
+	  <td>
+		<span th:text="${contactDetail.body}"></span>
+	  </td>
+	</tr>
+	</table>
+	<a th:href="@{/admin/contacts}">一覧に戻る</a><br>
+	<a th:href="@{/admin/contacts/:{id}/edit(id=${contactDetail.id})}">編集する</a><br>
+	<a th:href="@{/admin/logout}">ログアウト</a>
+</body>
+</html>

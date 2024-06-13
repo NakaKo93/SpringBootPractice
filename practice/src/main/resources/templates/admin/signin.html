@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>サインイン</title>
+</head>
+<body>
+	<h1>ログイン</h1>
+	<form th:action="@{/admin/signin}" method="post">
+	  <table border="1">
+	    <tr>
+	      <td>メールアドレス</td>
+	      <td>
+	        <input type="text" id="email" name="email" />
+	      </td>
+	    </tr>
+	    <tr>
+	      <td>パスワード</td>
+	      <td>
+			<input type="password" id="password" name="password" />
+	      </td>
+	    </tr>
+	  </table>
+	  <input type="submit" value="ログイン">
+	</form>
+	<div th:if="${param.error}">
+		<span th:text="${session.SPRING_SECURITY_LAST_EXCEPTION.message}" style="color: red">ログインに失敗しました</span>
+	</div>
+	<a th:href="@{/admin/signup}">新規作成</a>
+</body>
+</html>

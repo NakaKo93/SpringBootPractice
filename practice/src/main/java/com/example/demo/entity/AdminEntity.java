@@ -10,12 +10,12 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "contacts")
-public class Contact {
+@Table(name = "admins")
+public class AdminEntity {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "id")
-    private Long id;
+    private int id;
 
     @Column(name = "last_name", nullable = false)
     private String lastName;
@@ -26,21 +26,9 @@ public class Contact {
     @Column(name = "email", nullable = false)
     private String email;
 
-    @Column(name = "phone", nullable = false)
-    private String phone;
+    @Column(name = "password", nullable = false)
+    private String password;
 
-    @Column(name = "zip_code", nullable = false)
-    private String zipCode;
-
-    @Column(name = "address", nullable = false)
-    private String address;
-
-    @Column(name = "building_name", nullable = false)
-    private String buildingName;
-
-    @Column(name = "contact_type", nullable = false)
-    private String contactType;
-
-    @Column(name = "body", nullable = false)
-    private String body;
+    @Column(name = "current_sign_in_at", nullable = true)
+    private String current_sign_in_at;
 }

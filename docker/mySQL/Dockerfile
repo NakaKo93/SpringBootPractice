@@ -15,6 +15,6 @@ COPY docker/mySQL/my.cnf /etc/mysql/conf.d/my.cnf
 ENV TZ "Asia/Tokyo"
 
 # SQLファイルをコンテナ内にコピー
-COPY ./db/init /docker-entrypoint-initdb.d
+COPY ./db/init /init
 
 CMD ["mysqld"]

@@ -53,7 +53,9 @@
       <tr>
         <td>お問い合わせ種別</td>
         <td>
-          <span th:text="*{contactType}"></span>
+		  <span th:if="*{contactType == 'services'}">サービスに関するお問い合わせ</span>
+		  <span th:if="*{contactType == 'technicalQuestions'}">技術的なお問い合わせ</span>
+		  <span th:if="*{contactType == 'others'}">その他</span>
         </td>
       </tr>
       <tr>
@@ -65,5 +67,6 @@
     </table>
     <input type="submit" value="送信">
   </form>
+  <a th:href="@{/admin/logout}">ログアウト</a>
 </body>
 </html>

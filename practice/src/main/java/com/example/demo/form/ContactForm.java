@@ -11,6 +11,8 @@ import lombok.Data;
 
 @Data
 public class ContactForm implements Serializable {
+	private int id;
+	
     @NotBlank
     private String lastName;
 

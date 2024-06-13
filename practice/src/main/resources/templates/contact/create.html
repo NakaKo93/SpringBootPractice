@@ -6,7 +6,7 @@
 </head>
 <body>
   <h1>お問い合わせ</h1>
-  <form th:action="@{/admin/contacts/create}" th:object="${contactForm}" method="post">
+  <form th:action="@{/contact}" th:object="${contactForm}" method="post">
     <table border="1">
       <tr>
         <td>姓</td>
@@ -78,6 +78,5 @@
     </table>
     <input type="submit" value="確認">
   </form>
-  <a th:href="@{/admin/logout}">ログアウト</a>
 </body>
 </html>
